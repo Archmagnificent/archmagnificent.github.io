@@ -1,14 +1,142 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+
+    <title>Your Name — Portfolio</title>
+    <meta
+        name="description"
+        content="The personal portfolio of Your Name, featuring game design and creative projects."
+    >
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>Hello World!</h1>
-    <p>My first website, published with GitHub Pages.</p>
+
+    <!-- Site-wide header and navigation -->
+    <header>
+        <a href="./" aria-label="Your Name — Home">
+            Your Name
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="./" aria-current="page">Home</a></li>
+                <li><a href="game-design/">Game Design</a></li>
+                <li><a href="about/">About</a></li>
+                <li><a href="contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main homepage content -->
+    <main>
+
+        <!-- Introduction -->
+        <section id="introduction" aria-labelledby="intro-heading">
+            <p>Game Designer · Creative Explorer</p>
+
+            <h1 id="intro-heading">
+                Designing experiences. Building worlds.
+            </h1>
+
+            <p>
+                A short introduction about who you are, what you do,
+                and the kinds of experiences you want to create.
+            </p>
+
+            <a href="game-design/">Explore my work</a>
+        </section>
+
+        <!-- Selected projects -->
+        <section id="featured-work" aria-labelledby="work-heading">
+            <h2 id="work-heading">Featured Work</h2>
+
+            <p>
+                A selection of projects that represent my interests,
+                skills, and approach to creative work.
+            </p>
+
+            <div class="project-list">
+
+                <article>
+                    <h3>Project One</h3>
+                    <p>
+                        A short description of the project, its goals,
+                        and your contribution.
+                    </p>
+                    <a href="game-design/">Explore project</a>
+                </article>
+
+                <article>
+                    <h3>Project Two</h3>
+                    <p>
+                        A second project, prototype, or creative experiment.
+                    </p>
+                    <a href="game-design/">Explore project</a>
+                </article>
+
+                <article>
+                    <h3>Project Three</h3>
+                    <p>
+                        Another example of your work or an area you want
+                        to explore.
+                    </p>
+                    <a href="game-design/">Explore project</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Creative disciplines -->
+        <section id="disciplines" aria-labelledby="disciplines-heading">
+            <h2 id="disciplines-heading">Explore My Fields</h2>
+
+            <p>
+                Different disciplines, connected by a shared creative
+                approach.
+            </p>
+
+            <ul>
+                <li>
+                    <a href="game-design/">
+                        <h3>Game Design</h3>
+                        <p>Mechanics, systems, levels, and player experiences.</p>
+                    </a>
+                </li>
+
+                <li>
+                    <h3>Art</h3>
+                    <p>Visual experiments and artistic projects. Coming later.</p>
+                </li>
+
+                <li>
+                    <h3>Writing</h3>
+                    <p>Stories, narrative design, and worldbuilding. Coming later.</p>
+                </li>
+
+                <li>
+                    <h3>Engineering</h3>
+                    <p>Code, tools, and technical experiments. Coming later.</p>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Site-wide footer -->
+    <footer>
+        <p>Interested in working together?</p>
+        <a href="contact/">Get in touch</a>
+
+        <p>
+            &copy; 2026 Your Name. All rights reserved.
+        </p>
+    </footer>
+
 </body>
 </html>
-EOF
+
