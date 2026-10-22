@@ -40,12 +40,10 @@ html {
 }
 
 body {
-    margin: 0;
     background-color: var(--color-background);
-    color: var(--color-text);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.7;
+    background-image: radial-gradient(circle, rgb(195 198 194 / 12%) 1px, transparent 1.2px);
+    background-size: 12px 12px;
+    background-position: 0 0;
 }
 
 img {
@@ -566,4 +564,285 @@ footer p:last-child {
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+
+/* ========================================
+   SIDEBAR LAYOUT
+   ======================================== */
+
+body {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+/* Sidebar panel */
+
+.site-sidebar {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem 1.25rem;
+    overflow-y: auto;
+
+    background-color: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    border-left: 6px solid var(--color-accent);
+
+    /* Subtle flowing wave pattern */
+    background-image:
+        repeating-radial-gradient(
+            ellipse 180% 55% at 0% 50%,
+            transparent 0 23px,
+            rgb(243 86 0 / 9%) 24px,
+            transparent 25px 36px
+        );
+    background-size: 100% 100%;
+}
+
+/* Brand */
+
+.site-brand {
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 2.5rem;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-brand::after {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin-top: 0.8rem;
+    background: var(--color-accent);
+}
+
+/* Desktop navigation */
+
+.desktop-nav ul,
+.mobile-menu nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.desktop-nav a,
+.mobile-menu nav a {
+    display: block;
+    padding: 0.55rem 0;
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.desktop-nav a:hover,
+.mobile-menu nav a:hover,
+.desktop-nav a[aria-current="page"],
+.mobile-menu nav a[aria-current="page"] {
+    color: var(--color-accent);
+}
+
+.desktop-nav a:focus-visible,
+.mobile-menu a:focus-visible,
+.site-brand:focus-visible,
+.mobile-menu summary:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+/* Bottom details */
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.sidebar-meta {
+    margin-top: auto;
+    padding-top: 2rem;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+}
+
+.sidebar-meta p {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.sidebar-social a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.sidebar-social a:hover {
+    color: var(--color-accent);
+}
+
+/* Hide the mobile menu on desktop */
+
+.mobile-menu {
+    display: none;
+}
+
+/* Main content and footer move to the right */
+
+body > main {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    padding: 3rem clamp(1.5rem, 5vw, 5rem);
+}
+
+body > footer {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1.5rem clamp(1.5rem, 5vw, 5rem);
+    border-top: 1px solid var(--color-border);
+}
+
+/* ========================================
+   MOBILE NAVIGATION
+   ======================================== */
+
+@media (max-width: 760px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 100px;
+        box-sizing: border-box;
+        overflow: visible;
+        padding: 1.5rem 1.5rem;
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .site-brand {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+
+    .mobile-menu {
+        display: block;
+        margin-top: 1.25rem;
+    }
+
+    .mobile-menu summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.65rem 0;
+        color: var(--color-text);
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .menu-icon {
+        color: var(--color-accent);
+        font-size: 1.4rem;
+    }
+
+    .mobile-menu nav {
+        padding: 0.75rem 0 0.5rem;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .sidebar-bottom {
+        flex: initial;
+    }
+
+    .sidebar-meta {
+        margin-top: 1rem;
+        padding-top: 0.75rem;
+    }
+
+    body > main {
+        padding: 2rem 1.25rem;
+    }
+
+    body > footer {
+        padding: 1.25rem;
+    }
+}
+
+/* Wave texture on discipline links */
+
+#disciplines > ul > li > a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    isolation: isolate;
+
+    background-color: var(--color-surface);
+    background-image:
+        repeating-radial-gradient(
+            ellipse 180% 90% at 0% 50%,
+            transparent 0 23px,
+            rgb(243 86 0 / 7%) 24px,
+            transparent 25px 36px
+        );
+
+    border: 1px solid var(--color-border);
+    transition:
+        border-color 180ms ease,
+        background-color 180ms ease;
+}
+
+#disciplines > ul > li > a:hover {
+    border-color: var(--color-accent);
+    background-color: #191715;
+}
+
+#disciplines > ul > li > a h3,
+#disciplines > ul > li > a p {
+    position: relative;
+}
+
+.project-list article img,
+.project-list article .placeholder-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.project-list article img {
+    display: block;
 }

@@ -17,20 +17,54 @@
 <body>
 
     <!-- Site-wide header and navigation -->
-    <header>
-        <a href="./" aria-label="Your Name — Home">
-            Your Name
-        </a>
+    
+<header class="site-sidebar">
+    <a class="site-brand" href="./" aria-label="Your Name — Home">
+        Your Name
+    </a>
+
+    <details class="mobile-menu">
+        <summary aria-label="Toggle navigation">
+            <span class="menu-label">Menu</span>
+            <span class="menu-icon" aria-hidden="true">☰</span>
+        </summary>
 
         <nav aria-label="Main navigation">
             <ul>
                 <li><a href="./" aria-current="page">Home</a></li>
-                <li><a href="game design/">Game Design</a></li>
+                <li><a href="game-design/">Game Design</a></li>
+                <li><a href="art/">Art</a></li>
+                <li><a href="writing/">Writing</a></li>
+                <li><a href="engineering/">Engineering</a></li>
                 <li><a href="about/">About</a></li>
                 <li><a href="contact/">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </details>
+
+    <div class="sidebar-bottom">
+        <nav class="desktop-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="./" aria-current="page">Home</a></li>
+                <li><a href="game-design/">Game Design</a></li>
+                <li><a href="art/">Art</a></li>
+                <li><a href="writing/">Writing</a></li>
+                <li><a href="engineering/">Engineering</a></li>
+                <li><a href="about/">About</a></li>
+                <li><a href="contact/">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-meta">
+            <p class="sidebar-social">
+                <a href="https://github.com/" aria-label="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
+            </p>
+            <p>&copy; 2026 Your Name</p>
+        </div>
+    </div>
+</header>
+
 
     <!-- Main homepage content -->
     <main>
