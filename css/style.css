@@ -166,8 +166,9 @@ main {
     padding: 0 2rem;
 }
 
+
 section {
-    padding: var(--space-xl) 0;
+    padding: 3.5rem 0;
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -197,13 +198,13 @@ section p {
 ======================================== */
 
 #introduction {
-    min-height: 65vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 #introduction > p:first-child {
@@ -227,9 +228,9 @@ section p {
 
 #introduction > p:not(:first-child) {
     max-width: 600px;
-    margin: 2rem 0;
+    margin: 0.75rem 0;
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 #introduction > a {
@@ -651,6 +652,7 @@ body {
     padding: 0.55rem 0;
     color: var(--color-muted);
     text-decoration: none;
+    text-align: left;
     transition: color 180ms ease;
 }
 
@@ -889,6 +891,7 @@ body > footer {
     margin-bottom: 0.75rem;
 }
 
+
 .project-sidebar a {
     display: block;
     padding: 0.55rem 0;
@@ -979,4 +982,46 @@ body > footer {
     min-height: 500px;
     border: 1px solid var(--color-border);
     background: var(--color-surface);
+}
+
+/* Align only the nested project list */
+.site-sidebar .project-nav-heading ul {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.site-sidebar .project-nav-heading ul a {
+    text-align: left;
+}
+
+body > footer {
+    border-top: none;
+    position: relative;
+}
+
+body > footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: clamp(1.5rem, 5vw, 5rem);
+    right: clamp(1.5rem, 5vw, 5rem);
+    border-top: 1px solid var(--color-border);
+}
+
+.project-list .placeholder-image {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-list .placeholder-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: static;
+    opacity: 1;
+    visibility: visible;
 }
